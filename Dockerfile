@@ -13,7 +13,7 @@ RUN apk add --upgrade --no-cache python3 make g++
 RUN npm install -g pnpm
 
 COPY ["package.json", "pnpm-lock.yaml", "./"]
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --pm-on-fail=ignore
 
 COPY . .
 
